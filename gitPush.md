@@ -89,6 +89,21 @@ git push -u origin main
 
 > **Note:** `--allow-unrelated-histories` merges two repos that don't share a common history.
 
+### Handling the Nano Editor (Merge Commit Message)
+
+When Git merges remote content with your local files, it opens the **nano editor** to write a merge commit message. You'll see something like:
+
+```
+Merge branch 'main' of https://github.com/...
+```
+
+**To save and exit nano:**
+1. Press `Ctrl + O` (Write Out / Save)
+2. Press `Enter` to confirm the filename
+3. Press `Ctrl + X` to exit
+
+> **Tip:** The default merge message is usually fine - just save and exit.
+
 ---
 
 ## Quick Reference Commands
