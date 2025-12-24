@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Draft Machine</title>
+    <link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel ="stylesheet" href="HomieStylus.css">
+    <link rel="icon" type="image/png" href="https://example.com/favicon.png">
+</head>
+<body>
+    <div class="container">
+        <!-- Left Sidebar - Player Statistics -->
+        <div class="player-stats">
+            <h3>Player Statistics</h3>
+            <div id="playerStatsContent">
+                <p style="text-align: center; color: #718096; font-style: italic;">
+                    Click on a player to view detailed statistics
+                </p>
+            </div>
+        </div>
+
+        <!-- Main Field Area -->
+        <div class="field-container">
+            <div class="team-info">
+                <div>
+                    <h2 style="color: #2d3748; margin-bottom: 5px;">My FPL Team</h2>
+                    <p style="color: #4a5568;">Gameweek 1</p>
+                </div>
+                <div class="team-value">
+                    <span class="currency">£</span>100.0<span style="font-size: 16px;">m</span>
+                </div>
+            </div>
+
+            <div class="formation-selector">
+                <div class="formation-buttons">
+                    <button class="formation-btn active" onclick="changeFormation('3-4-3')">3-4-3</button>
+                    <button class="formation-btn" onclick="changeFormation('3-5-2')">3-5-2</button>
+                    <button class="formation-btn" onclick="changeFormation('4-3-3')">4-3-3</button>
+                    <button class="formation-btn" onclick="changeFormation('4-4-2')">4-4-2</button>
+                    <button class="formation-btn" onclick="changeFormation('4-5-1')">4-5-1</button>
+                    <button class="formation-btn" onclick="changeFormation('5-3-2')">5-3-2</button>
+                    <button class="formation-btn" onclick="changeFormation('5-4-1')">5-4-1</button>
+                </div>
+            </div>
+
+            <div class="football-field">
+                <div class="field-lines">
+                    <div class="center-line"></div>
+                    <div class="center-circle"></div>
+                </div>
+
+                <!-- Goalkeeper -->
+                <div class="position-row goalkeeper-row">
+                    <div class="player-slot" onclick="selectPlayer(this)" data-position="GK">
+                        <div class="fixture-indicator fixture-easy">2</div>
+                        <div class="player-name">Raya</div>
+                        <div class="player-price">£5.5m</div>
+                        <div class="player-team">ARS</div>
+                    </div>
+                </div>
+
+                <!-- Defenders -->
+                <div class="position-row defender-row" id="defenderRow">
+                    <div class="player-slot" onclick="selectPlayer(this)" data-position="DEF">
+                        <div class="fixture-indicator fixture-medium">3</div>
+                        <div class="player-name">Alexander-Arnold</div>
+                        <div class="player-price">£7.0m</div>
+                        <div class="player-team">LIV</div>
+                    </div>
+                    <div class="player-slot" onclick="selectPlayer(this)" data-position="DEF">
+                        <div class="fixture-indicator fixture-easy">2</div>
+                        <div class="player-name">Saliba</div>
+                        <div class="player-price">£6.0m</div>
+                        <div class="player-team">ARS</div>
+                    </div>
+                    <div class="player-slot" onclick="selectPlayer(this)" data-position="DEF">
+                        <div class="fixture-indicator fixture-hard">4</div>
+                        <div class="player-name">Dalot</div>
+                        <div class="player-price">£5.0m</div>
+                        <div class="player-team">MUN</div>
+                    </div>
+                </div>
+
+                <!-- Midfielders -->
+                <div class="position-row midfielder-row" id="midfielderRow">
+                    <div class="player-slot" onclick="selectPlayer(this)" data-position="MID">
+                        <div class="fixture-indicator fixture-easy">2</div>
+                        <div class="player-name">Saka</div>
+                        <div class="player-price">£10.0m</div>
+                        <div class="player-team">ARS</div>
+                    </div>
+                    <div class="player-slot" onclick="selectPlayer(this)" data-position="MID">
+                        <div class="fixture-indicator fixture-medium">3</div>
+                        <div class="player-name">Palmer</div>
+                        <div class="player-price">£10.5m</div>
+                        <div class="player-team">CHE</div>
+                    </div>
+                    <div class="player-slot" onclick="selectPlayer(this)" data-position="MID">
+                        <div class="fixture-indicator fixture-medium">3</div>
+                        <div class="player-name">Son</div>
+                        <div class="player-price">£10.0m</div>
+                        <div class="player-team">TOT</div>
+                    </div>
+                    <div class="player-slot" onclick="selectPlayer(this)" data-position="MID">
+                        <div class="fixture-indicator fixture-easy">2</div>
+                        <div class="player-name">Ødegaard</div>
+                        <div class="player-price">£8.5m</div>
+                        <div class="player-team">ARS</div>
+                    </div>
+                </div>
+
+                <!-- Forwards -->
+                <div class="position-row forward-row" id="forwardRow">
+                    <div class="player-slot" onclick="selectPlayer(this)" data-position="FWD">
+                        <div class="fixture-indicator fixture-medium">3</div>
+                        <div class="player-name">Haaland</div>
+                        <div class="player-price">£15.0m</div>
+                        <div class="player-team">MCI</div>
+                    </div>
+                    <div class="player-slot" onclick="selectPlayer(this)" data-position="FWD">
+                        <div class="fixture-indicator fixture-hard">4</div>
+                        <div class="player-name">Jackson</div>
+                        <div class="player-price">£8.0m</div>
+                        <div class="player-team">CHE</div>
+                    </div>
+                    <div class="player-slot" onclick="selectPlayer(this)" data-position="FWD">
+                        <div class="fixture-indicator fixture-easy">1</div>
+                        <div class="player-name">Havertz</div>
+                        <div class="player-price">£8.0m</div>
+                        <div class="player-team">ARS</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Sidebar - Transfer Queue -->
+        <div class="transfer-queue">
+            <h3>Transfer Planning</h3>
+            <div class="transfer-slot" onclick="addToTransferQueue(this)">
+                <span>Transfer Slot 1</span>
+            </div>
+            <div class="transfer-slot" onclick="addToTransferQueue(this)">
+                <span>Transfer Slot 2</span>
+            </div>
+            <div class="transfer-slot" onclick="addToTransferQueue(this)">
+                <span>Transfer Slot 3</span>
+            </div>
+            <div class="transfer-slot" onclick="addToTransferQueue(this)">
+                <span>Transfer Slot 4</span>
+            </div>
+            <div class="transfer-slot" onclick="addToTransferQueue(this)">
+                <span>Transfer Slot 5</span>
+            </div>
+
+            <div class="fixture-legend">
+                <h4>Fixture Difficulty</h4>
+                <div class="legend-item">
+                    <div class="legend-color fixture-easy"></div>
+                    <span class="legend-text">Easy (1-2)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color fixture-medium"></div>
+                    <span class="legend-text">Medium (3)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color fixture-hard"></div>
+                    <span class="legend-text">Hard (4-5)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="HomieScript.js"></script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fantasy Bullseye - Join the Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Convergence:wght@400&family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="loginStyles.css">
+</head>
+<body>
+    <!-- Floating Particles Background -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Enhanced Header -->
+    <header>
+        <div class="logo">FANTASY BULLSEYE</div>
+        <div class="tagline">Precision • Strategy • Victory</div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="glass">
+            <h2 class="form-title" id="formTitle">Join the Game</h2>
+            
+            <!-- Form Toggle -->
+            <div class="form-toggle">
+                <button type="button" class="toggle-btn active" id="signupToggle">Sign Up</button>
+                <button type="button" class="toggle-btn" id="signinToggle">Sign In</button>
+            </div>
+
+            <!-- Message Display -->
+            <div class="message" id="messageBox"></div>
+            
+            <!-- Sign Up Form -->
+            <form id="signupForm" class="auth-form">
+                <div class="input-group">
+                    <label class="input-label" for="username">Username</label>
+                    <input type="text" 
+                           id="username" 
+                           name="username" 
+                           placeholder="Choose your battle name..." 
+                           required 
+                           minlength="3" 
+                           maxlength="15"
+                           class="glass-input"
+                           autocomplete="username"/>
+                </div>
+
+                <div class="input-group">
+                    <label class="input-label" for="email">Email Address</label>
+                    <input type="email" 
+                           id="email" 
+                           name="email" 
+                           placeholder="Enter your email address..."
+                           required 
+                           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                           class="glass-input"
+                           autocomplete="email"/>
+                </div>
+
+                <div class="input-group">
+                    <label class="input-label" for="password">Password</label>
+                    <input type="password" 
+                           id="password" 
+                           name="password" 
+                           placeholder="Create a strong password..." 
+                           required 
+                           minlength="8" 
+                           maxlength="40" 
+                           class="glass-input"
+                           autocomplete="new-password"/>
+                    <div class="password-strength">
+                        <div class="strength-bar" id="strengthBar"></div>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label class="input-label" for="confirmPassword">Confirm Password</label>
+                    <input type="password" 
+                           id="confirmPassword" 
+                           name="confirmPassword" 
+                           placeholder="Confirm your password..." 
+                           required 
+                           minlength="8" 
+                           maxlength="40" 
+                           class="glass-input"
+                           autocomplete="new-password"/>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <span>Ready to Dominate</span>
+                    <div class="loading" id="signupLoading"></div>
+                </button>
+            </form>
+
+            <!-- Sign In Form (Hidden by default) -->
+            <form id="signinForm" class="auth-form" style="display: none;">
+                <div class="input-group">
+                    <label class="input-label" for="signinEmail">Email Address</label>
+                    <input type="email" 
+                           id="signinEmail" 
+                           name="email" 
+                           placeholder="Enter your email address..."
+                           required 
+                           class="glass-input"
+                           autocomplete="email"/>
+                </div>
+
+                <div class="input-group">
+                    <label class="input-label" for="signinPassword">Password</label>
+                    <input type="password" 
+                           id="signinPassword" 
+                           name="password" 
+                           placeholder="Enter your password..." 
+                           required 
+                           class="glass-input"
+                           autocomplete="current-password"/>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <span>Enter the Arena</span>
+                    <div class="loading" id="signinLoading"></div>
+                </button>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Fantasy Bullseye. All rights reserved. | Crafted for Champions</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<label for="light">Light</label> 
+<input type="radio" id="light" name="theme" value="Light"> 
+<label for="dark">Dark</label>
+<input type="radio" id="dark" name="theme" value="Dark">   
+
+<input type="text" id="fname" name="given-name" placeholder="Tell me your name.....">
+<button onclick="greetUser()">Submit</button>
+
+<input type="password" id="pword" name="password" placeholder="Enter Password">
+<button onclick="checkPassword()">Enter</button><br><br>
+
+<label for="birthdaytime">Birthday (date and time):</label><br>
+<input type="datetime-local" id="birthdaytime" name="birthdaytime"><br>
+
+<label for="appt">Select a time:</label>
+<input type="time" id="appt" name="appt"><br>
+
+<label for="phone">Enter your phone number:</label>
+<input type="tel" id="phone" name="phone" pattern="[+]{1}[0-9]{11,14}"><br><br>
+
+<input type="file" id="userfile" name="userfile" upload="image, video, audio, html, css, js, json, pdf, docx, xlsx, c, cpp, java, py", accept="image/*, video/*, audio/*, .html, .css, .js, .json, .pdf, .docx, .xlsx, .c, .cpp, .java, .py"><br>
+
+<input type="image"src="iconics/field.svg" alt="Submit" width="48" height="48"><br>
+
+<label for="volume">Volume:</label>
+<input type="range" id="volume" name="volume" min="0" max="100" step="0.01" value="50"><br> <!--Step sets how many steps will the tuner take for each keypress. Value sets where the tuner will start from--><br>
+
+<form action="https://www.google.com/search" method="get">
+<label for="gsearch">Search in Google:</label>
+<input type="search" id="gsearch" name="q" placeholder="Enter your search terms">
+<input type="submit" value="Search">
+</form><!--Plan is to create a separate pan for view the search result-->

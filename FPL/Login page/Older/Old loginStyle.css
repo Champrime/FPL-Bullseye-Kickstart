@@ -1,0 +1,83 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Convergence&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+
+html, body, main {
+    width: clamp(100px, 90%, 500px);
+    height: 90vh;
+    align-content: center;
+    text-align: center;
+    background-color: #c2e7b6dc;
+    text-align: center;
+    font-family: "Century Gothic", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(16, 80, 62, 0.8);
+}
+
+.glass {
+  width: clamp(10rem, 90%, 35rem);
+  padding: 20px 3.5px 20px 3.5px ;
+  font-style: normal;
+  background-color: rgba(194, 231, 182, 0.863);/*rgba(172, 6, 238, 0.25);*/
+  border-radius: 6em 1em;
+  box-shadow: 10px 10px 50px 0px rgba(94, 113, 87, 0.863);/*rgba(238, 3, 214, 0.3);*/
+  /*border: 1px solid rgba(255, 255, 255, 0.18);*/
+  text-align: center;
+}
+
+.glass-input {
+  font-family: "Convergence", "Nunito Sans", sans-serif;
+  width: 70%;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: rgba(16, 80, 62, 0.8);
+  margin: .4rem 10px 0rem 10px;
+  color: #dbe3d8d7; /* text color */
+  font-size: 1rem;
+  letter-spacing: 1px;             /* spacing between letters */
+  font-weight: 300;                /* make sure it’s not too faded */
+  transition: all 0.3s ease-in-out; /* smooth transition for focus effect */
+}
+
+.glass-input::placeholder{
+    color: #c2e7b6dc;   /* placeholder text color */
+    font-family: "Convergence", sans-serif;
+    font-style: normal;              /* italic text */
+    font-size: 0.8rem;               /* resize placeholder text */
+    letter-spacing: 1px;             /* spacing between letters */
+    font-weight: 300                    /* make sure it’s not too faded */
+}
+
+.form {
+    width: clamp(20rem, 70vw, 35rem); /*clamp(MIN, PREFERRED, MAX);*/
+    padding: 20px 3.5px 20px 3.5px ; /*padding: <top> <right> <bottom> <left>;*/
+    background: rgba(238, 6, 6, 0.265);
+/*background: 
+  <background-color> 
+  <background-image> 
+  <background-position> / <background-size> 
+  <background-repeat> 
+  <background-origin> 
+  <background-clip> 
+  <background-attachment>;
+*/
+    border-radius: 100px 10px; /*border-radius: <length> | <percentage>;*/
+/*border-radius: 50%;    perfect circle if box is square
+border-radius: 10px 20px; top-left & bottom-right = 10px, top-right & bottom-left = 20px
+*/
+    box-shadow: 0 8px 32px 0 rgba(80, 2, 122, 0.694); /*box-shadow: offset-x offset-y blur-radius spread-radius color;*/
+    backdrop-filter: blur(100vh);
+    -webkit-backdrop-filter: blur(8.5px);
+    border: 1px solid rgba(255, 255, 255, 0.18); /*border: <width> <style> <color>;
+*/
+    text-align: center; /*text-align: left | right | center | justify;*/
+}
+
+button {
+	width: clamp(20rem, 0.2vw, 35rem);
+    border-radius: 100em 10rem;
+}

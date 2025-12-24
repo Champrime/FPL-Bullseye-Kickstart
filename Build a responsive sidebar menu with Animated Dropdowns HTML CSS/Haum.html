@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haum</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav id="sidebar" class = "glass"><!--It could be argued that "aside" tag in place of <nav> tag is more fitting to a sidebar. If however, I want both a horizontal navbar and a sidebar, then "aside" is the choice-->
+        <ul>
+            <li>
+                <div class="logo">
+                    <span>Shakhawat Sadik</span>
+                    <button onclick="clickSidebar()" id="toggle-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#dcf6e5"><path d="M440-240 200-480l240-240 56 56-183 184 183 184-56 56Zm264 0L464-480l240-240 56 56-183 184 183 184-56 56Z"/></svg>
+                    </button>
+                </div>
+            </li>
+            <li class="active">
+                <a href="index.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#dcf6e5"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="dashboard.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#dcf6e5"><path d="M520-600v-240h320v240H520ZM120-440v-400h320v400H120Zm400 320v-400h320v400H520Zm-400 0v-240h320v240H120Zm80-400h160v-240H200v240Zm400 320h160v-240H600v240Zm0-480h160v-80H600v80ZM200-200h160v-80H200v80Zm160-320Zm240-160Zm0 240ZM360-280Z"/></svg>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+				<div class="menu-item-container">
+                    <div class="linkless-menu">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#dcf6e5"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
+					    <span>Create new or Add more</span>
+                    </div>
+					<button onclick="clickSubMenu(this)" class="dropdown-btn">
+						<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#dcf6e5"><path d="M480-360 280-560h400L480-360Z"/></svg>
+					</button>
+				</div>
+                <ul class="sub-menu">
+                    <div>
+                        <li><a href="#">Plan for the week</a></li>
+                        <li><a href="#">Project</a></li>
+                        <li><a href="#">Document</a></li>
+                        <li><a href="#">Watchlist</a></li>
+                    </div>
+                </ul>
+            </li>
+            <li>
+                <div class="menu-item-container">
+                    <a href="JavaScript_Learing_Journey.html" class="main-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#dcf6e5"><path d="M300-360q-25 0-42.5-17.5T240-420v-40h60v40h60v-180h60v180q0 25-17.5 42.5T360-360h-60Zm220 0q-17 0-28.5-11.5T480-400v-40h60v20h80v-40H520q-17 0-28.5-11.5T480-500v-60q0-17 11.5-28.5T520-600h120q17 0 28.5 11.5T680-560v40h-60v-20h-80v40h100q17 0 28.5 11.5T680-460v60q0 17-11.5 28.5T640-360H520Z"/></svg>
+                        <span class="innerLink">JS Progress</span>
+                    </a>
+                    <button onclick="clickSubMenu(this)" class="dropdown-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#dcf6e5"><path d="m480-360 160-160H320l160 160Zm0 280q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+                    </button>
+                </div>
+                <ul class="sub-menu">
+                    <div>
+                        <li><a href="#">JavaScript Basics</a><!--1-->
+                        <li><a href="#">DOM</a></li>
+                        <li><a href="#">React Progress</a></li>
+                        <li><a href="#">Next.js Progress</a></li>
+                    </div>
+                </ul>
+            </li>
+            <li>
+                <div>
+                    <a href="HTML-note.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#dcf6e5"><path d="M0-360v-240h60v80h80v-80h60v240h-60v-100H60v100H0Zm310 0v-180h-70v-60h200v60h-70v180h-60Zm170 0v-200q0-17 11.5-28.5T520-600h180q17 0 28.5 11.5T740-560v200h-60v-180h-40v140h-60v-140h-40v180h-60Zm320 0v-240h60v180h100v60H800Z"/></svg>
+                        <span>HTML Progress</span>
+                    </a>
+                </div>
+                <button onclick="clickSubMenu(this)" class="dropdown-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#dcf6e5"><path d="m480-360 160-160H320l160 160Zm0 280q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+                </button>
+                <ul class="sub-menu">
+                <div>
+                    <li>
+                        <span>How far am I?</span>
+                        <button onclick="clickSubMenu(this)" class="dropdown-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#dcf6e5"><path d="M480-360 280-560h400L480-360Z"/></svg>
+                        </button>
+                        <ul class="sub-menu">
+                            <div>
+                                <li><a href="#">HTML Basics</a><!--2--></li>
+                                <li><a href="#">Semantic HTML</a></li>
+                                <li><a href="#">Forms and Validations</a></li>
+                                <li><a href="#">Accessibility</a></li>
+                            </div>
+                        </ul>
+                    </li>
+                </div>
+                </ul>
+            </li>
+            <li>
+                <a href="calender.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#dcf6e5"><path d="M482-160q-134 0-228-93t-94-227v-7l-64 64-56-56 160-160 160 160-56 56-64-64v7q0 100 70.5 170T482-240q26 0 51-6t49-18l60 60q-38 22-78 33t-82 11Zm278-161L600-481l56-56 64 64v-7q0-100-70.5-170T478-720q-26 0-51 6t-49 18l-60-60q38-22 78-33t82-11q134 0 228 93t94 227v7l64-64 56 56-160 160Z"/></svg>
+                    <span>Calender</span>
+                </a>
+            </li>
+            <li>
+                <a href="profile.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#dcf6e5"><path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z"/></svg>
+                    <span>Profile</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <div class="container">
+            <h2>Hello World</h2>
+            <p>This is the first article</p>
+        </div>
+        <div class="container">
+            <h2>Phase 1 - Learning</h2>
+                <h3>JavaScript</h3>
+                <p>I have to learn multiple basic things. Let's catagorize them:
+                    <li>Functional Programming</li>
+                    <li>OOP
+                        <ul>
+                        <li>Inheritance</li>
+                        <li>Encapsulation</li>
+                        <li>Polymorphism</li>
+                        <li>(Forgot the last one.. how??)</li>
+                        </ul>
+                    </li>
+                    <li>DOM
+                        <ul>
+                        <li>DOM Functionality</li>
+                        <li>Basic DOM Keywords</li>
+                        <li>DOM Manipulation</li>
+                        </ul>
+                    </li>
+                    <li>Error Catching</li>
+                    <li>Map Functioning</li>
+                    <li>ForEach</li>
+                    <li>Jest</li>
+                    <li>Asynchronisation
+                        <ul>
+                        <li>Fetch</li>
+                        <li>Get</li>
+                        <li>Promise</li>
+                        <li>(Anything even deeper)</li>
+                        </ul>
+                    </li>
+                    There might be a lot more of Vanila JS basics, but before I go into React.js and Next.js, I believe, that should bee all.
+                </p>
+        </div>
+    </main>
+</body>
+<script type="text/JavaScript" src="core.js" defer></script>
+<footer>
+
+</footer>
+</html>
+
+<!--<ul>
+                        <li><a href="#">Functional Programming</a></li>
+                        <li><a href="#">OOP</a>
+                            <ol>
+                                <li><a href="#">Inheritance</a></li>
+                                <li><a href="#">Encapsulation</a></li>
+                                <li><a href="#">Polymorphism</a></li>
+                                <li><a href="#">(Forgot the last one)</a></li>
+                            </ol>
+                        </li>
+                        <li><a href="#">Error Catching</a></li>
+                        <li><a href="#">Map Functioning</a></li>
+                        <li><a href="#">ForEach</a></li>
+                        <li><a href="#">Jest</a></li>
+                        <li><a href="#">Asynchronisation</a>
+                            <ul>
+                                <li><a href="#">Async/await</a></li>
+                                <li><a href="#">Callback</a>
+                                    <ul>
+                                        <li><a href="#">.catch()</a></li>
+                                        <li><a href="#">.then()</a></li>
+                                        <li><a href="#">.finally()</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Fetch</a></li>
+                                <li><a href="#">Get</a></li>
+                                <li><a href="#">Promise</a></li>
+                                <li><a href="#">(Anything even deeper)</a></li>
+                            </ul>
+                        </li>
+                    </ul>-->

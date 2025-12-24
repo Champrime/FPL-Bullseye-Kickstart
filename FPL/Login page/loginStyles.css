@@ -1,0 +1,407 @@
+
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Convergence:wght@400&display=swap');
+
+/* Root Variables for Consistency */
+:root {
+    --primary-color: #10503ecc;
+    --background-color: #c2e7b6dc;
+    --glass-bg: rgb(190, 232, 170);
+    --glass-shadow: rgba(94, 113, 87, 0.863);
+    --text-light: #77ff00d7;
+    --placeholder-color: #c2e7b6dc;
+    --glass-box-radius: 6em 1em;
+    --border-radius-md: 100px 10px;
+    --border-radius-sm: 10px;
+    --font1: "Century Gothic", sans-serif;
+    --font2: "Convergence", sans-serif;
+    --glass-angle: 0deg;
+    --accent-green: #39ff14;
+    --dark-green: #0d4a2b;
+    --error-red: #ff3366;
+    --success-green: #00ff88;
+}
+
+/* Enhanced Reset and Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100vh;
+    font-family: var(--font2);
+    background: linear-gradient(135deg, #1a4d3a 0%, #2d5a47 25%, #3a6b54 50%, #2d5a47 75%, #1a4d3a 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    color: var(--text-light);
+    overflow-x: hidden;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Floating particles background effect */
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--accent-green);
+    border-radius: 50%;
+    opacity: 0.3;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0.3; }
+    50% { transform: translateY(-20px) translateX(10px); opacity: 0.8; }
+}
+
+/* Enhanced Header */
+header {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 2rem 0;
+    background: rgba(16, 80, 62, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 900;
+    background: linear-gradient(45deg, var(--accent-green), #00ff88, var(--accent-green));
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: logoGlow 3s ease-in-out infinite;
+    margin-bottom: 0.5rem;
+}
+
+@keyframes logoGlow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.tagline {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    font-weight: 300;
+    color: var(--text-light);
+    opacity: 0.9;
+    letter-spacing: 2px;
+}
+
+/* Main Content */
+main {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    min-height: calc(100vh - 200px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+}
+
+/* Enhanced Glass Morphism Container */
+.glass {
+    width: clamp(20rem, 90%, 28rem);
+    position: relative;
+    margin: 0 auto;
+    padding: 3rem 2.5rem;
+    background: rgba(190, 232, 170, 0.15);
+    border-radius: var(--glass-box-radius);
+    box-shadow: 
+    0 8px 32px 0 rgba(31, 38, 135, 0.37),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    overflow: hidden;
+}
+
+.glass::after, .glass::before {
+    content: "";
+    position: absolute;
+    width: calc(100% + 14px);
+    height: calc(100% + 14px);
+    background-image: conic-gradient(from var(--glass-angle), transparent 70%, var(--accent-green), #00ff88);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    border-radius: var(--glass-box-radius);
+    animation: 20s spin linear infinite;
+}
+
+.glass::after {
+    filter: blur(2rem);
+    opacity: 0.4;
+}
+
+@keyframes spin {
+    to { --glass-angle: 360deg; }
+}
+
+@property --glass-angle{
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
+
+/* Form Styling */
+.form-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    font-weight: 700;
+    color: var(--accent-green);
+    margin-bottom: 2rem;
+    text-shadow: 0 0 20px rgba(57, 255, 20, 0.5);
+}
+
+.form-toggle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    background: rgba(16, 80, 62, 0.2);
+    border-radius: 50px;
+    padding: 0.3rem;
+}
+
+.toggle-btn {
+    padding: 0.8rem 2rem;
+    border: none;
+    background: transparent;
+    color: var(--text-light);
+    font-family: var(--font2);
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.toggle-btn.active {
+    background: var(--primary-color);
+    color: var(--accent-green);
+    box-shadow: 0 4px 15px rgba(16, 80, 62, 0.4);
+}
+
+/* Input Group Styling */
+.input-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.input-label {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--accent-green);
+    margin-bottom: 0.5rem;
+    display: block;
+    letter-spacing: 1px;
+}
+
+/* Enhanced Glass Input Styling */
+.glass-input {
+    font-family: var(--font2);
+    width: 100%;
+    padding: 1rem 1.2rem;
+    border: 2px solid rgba(57, 255, 20, 0.2);
+    outline: none;
+    border-radius: var(--border-radius-sm);
+    background: rgba(16, 80, 62, 0.3);
+    color: var(--text-light);
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease-in-out;
+    backdrop-filter: blur(10px);
+}
+
+.glass-input::placeholder {
+    color: rgba(194, 231, 182, 0.6);
+    font-style: italic;
+}
+
+.glass-input:focus {
+    transform: translateY(-2px);
+    border-color: var(--accent-green);
+    box-shadow: 0 8px 25px rgba(57, 255, 20, 0.3);
+    background: rgba(16, 80, 62, 0.4);
+}
+
+.glass-input:valid {
+    border-color: var(--success-green);
+}
+
+.glass-input:invalid:not(:placeholder-shown) {
+    border-color: var(--error-red);
+}
+
+/* Password Strength Indicator */
+.password-strength {
+    margin-top: 0.5rem;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.strength-bar {
+    height: 100%;
+    width: 0%;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+/* Enhanced Button Styling */
+.submit-btn {
+    width: 100%;
+    padding: 1.2rem 2rem;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(45deg, var(--primary-color), var(--dark-green));
+    color: var(--accent-green);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+.submit-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.submit-btn:hover::before {
+    left: 100%;
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(57, 255, 20, 0.4);
+    background: linear-gradient(45deg, var(--dark-green), var(--primary-color));
+}
+
+.submit-btn:active {
+    transform: translateY(-1px);
+}
+
+/* Footer */
+footer {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 2rem;
+    background: rgba(16, 80, 62, 0.1);
+    color: var(--text-light);
+    font-family: 'Rajdhani', sans-serif;
+    opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .glass {
+    width: 95%;
+    padding: 2rem 1.5rem;
+    }
+    
+    .form-toggle {
+    flex-direction: column;
+    gap: 0.5rem;
+    }
+    
+    .toggle-btn {
+    padding: 0.8rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+    padding: 1rem 0;
+    }
+    
+    main {
+    padding: 1rem 0.5rem;
+    }
+    
+    .glass {
+    width: 98%;
+    padding: 1.5rem 1rem;
+    }
+    
+    .form-title {
+    font-size: 1.5rem;
+    }
+}
+
+/* Loading Animation */
+.loading {
+    display: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(57, 255, 20, 0.3);
+    border-top: 2px solid var(--accent-green);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-left: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Success/Error Messages */
+.message {
+    padding: 1rem;
+    border-radius: var(--border-radius-sm);
+    margin-bottom: 1rem;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 500;
+    text-align: center;
+    display: none;
+}
+
+.message.success {
+    background: rgba(0, 255, 136, 0.2);
+    color: var(--success-green);
+    border: 1px solid var(--success-green);
+}
+
+.message.error {
+    background: rgba(255, 51, 102, 0.2);
+    color: var(--error-red);
+    border: 1px solid var(--error-red);
+}
